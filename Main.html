@@ -1,22 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-
-    <title>Chat-Main-Page</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="styles.css">
+  <title>Chat App</title>
 </head>
 <body>
-    <header>
-        <h1>Chat App</h1>
-    </header>
-    <main>
-        <div class="chat-box" id="chatBox"></div>
-        <div>
-            <input type="text" id="messageInput" placeholder="Type your message...">
-            <button onclick="sendMessage()">Send</button>
+  <header>
+    Chat App
+  </header>
+  <div id="chat-container">
+    <div id="chat-messages">
+
+      <div class="message">
+        <div class="user-avatar">
+          <img src="https://via.placeholder.com/40" alt="User 1">
         </div>
-    </main>
-    <script src="script.js"></script>
+        <div class="message-content">
+          <div class="username">User 1</div>
+          <div class="text">Hello there!</div>
+        </div>
+      </div>
+      <div class="message">
+        <div class="user-avatar">
+          <img src="https://via.placeholder.com/40" alt="User 2">
+        </div>
+        <div class="message-content">
+          <div class="username">User 2</div>
+          <div class="text">Hi! How are you?</div>
+        </div>
+      </div>
+    </div>
+    <div id="input-container">
+      <input type="text" placeholder="Type your message...">
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+  <script src="Script.js"></script>
 </body>
 </html>

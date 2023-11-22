@@ -1,16 +1,34 @@
 function sendMessage() {
-    var messageInput = document.getElementById("messageInput");
-    var chatBox = document.getElementById("chatBox");
+  var inputElement = document.querySelector('input');
+  var messageContainer = document.getElementById('chat-messages');
 
-    var message = messageInput.value;
-    if (message.trim() !== "") {
-        var messageElement = document.createElement("div");
-        messageElement.className = "message";
-        messageElement.textContent = message;
-        chatBox.appendChild(messageElement);
+  if (inputElement.value.trim() !== '') {
+    var messageDiv = document.createElement('div');
+    messageDiv.classList.add('message');
 
-        messageInput.value = "";
+    var userAvatar = document.createElement('div');
+    userAvatar.classList.add('user-avatar');
+    userAvatar.innerHTML = '<img src="https://via.placeholder.com/40" alt="User 1">';
 
-        chatBox.scrollTop = chatBox.scrollHeight;
-    }
+    var messageContent = document.createElement('div');
+    messageContent.classList.add('message-content');
+
+    var username = document.createElement('div');
+    username.classList.add('username');
+    username.textContent = 'User 1';
+
+    var text = document.createElement('div');
+    text.classList.add('text');
+    text.textContent = inputElement.value;
+
+    messageContent.appendChild(username);
+    messageContent.appendChild(text);
+
+    messageDiv.appendChild(userAvatar);
+    messageDiv.appendChild(messageContent);
+
+    messageContainer.appendChild(messageDiv);
+
+    inputElement.value = '';
+  }
 }
